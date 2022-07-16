@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Log4j2
 @RestController
 @RequestMapping(BackendController.BASE_PATH_URL)
-
 public class BackendController {
 
     public static final String BASE_PATH_URL = "/backend";
