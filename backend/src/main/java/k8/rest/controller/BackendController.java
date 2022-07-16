@@ -11,13 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(BackendController.BASE_PATH_URL)
 
 public class BackendController {
+
     public static final String BASE_PATH_URL = "/backend";
     public static final String GREETING_URL = "/greeting";
 
     @GetMapping(GREETING_URL)
     public Greeting getGreeting() {
         log.info("GET: " + BASE_PATH_URL + GREETING_URL);
-        return Greeting.builder().message("success: backend service is online.").build();
+        return Greeting.builder()
+            .message("success: backend service is online.")
+            .build();
     }
 
 }
