@@ -18,7 +18,7 @@ public class BackendController {
     public Greeting getGreeting() {
         log.info("GET: " + BASE_PATH_URL + GREETING_URL);
         return Greeting.builder()
-            .message("success: backend service is online.")
+            .message("success: updated backend service is online.")
             .build();
     }
 

@@ -1,0 +1,28 @@
+apiVersion: skaffold/v2beta22
+kind: Config
+build:
+  local:
+    push: false
+  artifacts:
+  - image: docker.io/davidjmartin/security-backend
+    context: ./springboot-webservice    
+deploy:
+  helm:
+    releases:
+    # - name: nginx-ingress-controller
+    #   chartPath: ./nginx-ingress-controller
+    #   imageStrategy:
+    #     helm: {}
+    # - name: api-gateway
+    #   chartPath: ./api-gateway/chart
+    #   artifactOverrides:
+    #     image: davidjmartin/api-gateway
+    #   createNamespace: true
+    #   imageStrategy:
+    #     helm: {}
+    - name: security-backend
+      chartPath: ./springboot-webservice/helm
+      artifactOverrides:
+        image: docker.io/davidjmartin/security-backend
+      imageStrategy:
+        helm: {}

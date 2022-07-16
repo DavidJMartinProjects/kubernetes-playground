@@ -5,14 +5,14 @@
 replicaCount: 1
 
 image:
-  repository: davidjmartin/security-backend
+  repository: davidjmartin/security-backend-webservice
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
 imagePullSecrets: []
-nameOverride: "backend-service"
-fullnameOverride: "backend-service"
+nameOverride: "springboot-webservice"
+fullnameOverride: "springboot-webservice"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -38,7 +38,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 80
 
 ingress:
   enabled: false

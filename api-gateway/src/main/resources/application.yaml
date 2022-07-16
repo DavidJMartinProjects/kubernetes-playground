@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowedOptions: "*"
+      routes:
+        - id: springboot-webservice-api
+          uri: http://springboot-webservice:80
+          predicates:
+            - Path=/backend/greeting**, /backend/greeting**/*
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
