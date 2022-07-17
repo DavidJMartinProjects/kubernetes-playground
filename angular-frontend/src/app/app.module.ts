@@ -3,16 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
+import { AdminComponent } from './admin/admin.component';
+import { ManagerComponent } from './manager/manager.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AccessDeniedComponent,
+    AdminComponent,
+    ManagerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    KeycloakAngularModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+        provide: APP_INITIALIZER,
+        useFactory: initializer,
+        deps: [KeycloakService],
+        multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

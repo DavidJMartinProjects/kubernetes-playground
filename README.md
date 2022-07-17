@@ -15,3 +15,6 @@ https://hamdi-bouallegue.medium.com/secure-your-angular-spring-boot-application-
 
 app-init.ts created
 
+keycloak port-forwarded to: localhost:8080
+Keycloak UI: http://localhost:8080/auth
+
