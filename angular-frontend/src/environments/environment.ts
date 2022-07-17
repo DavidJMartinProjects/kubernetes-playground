@@ -10,7 +10,7 @@ export const environment = {
     issuer: 'http://localhost:8080/auth/',
     // Realm
     realm: 'demo-realm',
-    clientId: 'demo-angular',
+    clientId: 'angular-frontend',
   }
 };
 

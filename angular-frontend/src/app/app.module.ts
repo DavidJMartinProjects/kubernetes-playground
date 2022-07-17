@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializer } from 'src/utils/app-init';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { AdminComponent } from './admin/admin.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { ManagerComponent } from './manager/manager.component';
 
 @NgModule({

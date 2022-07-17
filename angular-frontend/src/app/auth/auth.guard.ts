@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -12,7 +11,7 @@ import { KeycloakAuthGuard, KeycloakService } from 'keycloak-angular';
 })
 export class AuthGuard extends KeycloakAuthGuard {
   constructor(
-    protected readonly router: Router,
+    protected override readonly router: Router,
     protected readonly keycloak: KeycloakService
   ) {
     super(router, keycloak);
@@ -42,7 +41,6 @@ export class AuthGuard extends KeycloakAuthGuard {
       return true;
     } else {
       // redirect to error page if the user doesn't have the nessecairy  role to access
-      // we will define this routes in a bit
       this.router.navigate(['access-denied']);
       return false;
     }
