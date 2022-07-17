@@ -8,3 +8,4 @@ generate a template from a helm chart repo
 helm template my-keycloak bitnami/keycloak --set auth.adminPassword=ADMIN-PASSWORD > keycloak.deploy.yaml
 
 
+
